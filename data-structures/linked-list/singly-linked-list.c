@@ -1,52 +1,75 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-
+// Define the structure for each node in the linked list
 typedef struct node{
     int item;
     struct node *next;
 } node;
 
+// Declare HEAD pointer to maintain the start of the linked list
+node *HEAD = NULL;
+
+// Function prototypes
+void fillList(int count);
+void printList();
+void freeMemory();
+
 int main(){
 
-    node *head = NULL;
+    fillList(10);
+    printList();
+    freeMemory();
+    
+    return 0;
+}
+
+void fillList(int count){
+
     node *current = NULL;
     
-    for (int i = 0; i < 5; i++){
+    for (int i = 0; i < count; i++){
         node *newNode = (node *)malloc(sizeof(node));
 
+        // Check if memory allocation fails
         if(newNode == NULL){
             printf("Failed to allocate memory\n");
-            return 1;
+            return;
         }
 
-        newNode->item = i;
+        newNode->item = i + 1;
         newNode->next = NULL;
 
-        if(head == NULL){
-            head = newNode;
+        // If the list is empty, assign HEAD to the new node
+        if(HEAD == NULL){
+            HEAD = newNode;
         } else {
+            // Link the current node to the new node
             current->next = newNode;
         }
 
+        // Update current pointer to the newly added node
         current = newNode;
     }
 
+}
 
+void printList(){
+    node *temp = HEAD;
     printf("Printing Linked List: \n");
-    current = head;
-    while(current != NULL){
-        printf("%d\n", current->item);
-        current = current->next;
+    while(temp != NULL){
+        printf("%d\n", temp->item);
+        temp = temp->next;
     }
+}
 
-    current = head;
+void freeMemory(){
+    node *current = HEAD;
     while(current != NULL){
         node *temp = current;
         current = current->next;
         free(temp);
     }
-    
-    printf("Done and dusted\n");
-    return 0;
+    HEAD = NULL;
 }
+
