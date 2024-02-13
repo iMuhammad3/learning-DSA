@@ -11,12 +11,15 @@ typedef struct node{
 node *HEAD = NULL;
 
 // Function prototypes
-void fillList(int count);
+void fillList(int);
 void printList();
 void freeMemory();
+void insertItem(int);
+void safeMalloc(node *);
 
 int main(){
 
+    insertItem(20);
     fillList(10);
     printList();
     freeMemory();
@@ -26,22 +29,18 @@ int main(){
 
 void fillList(int count){
 
-    node *current = NULL;
+    node *current = HEAD;
     
     for (int i = 0; i < count; i++){
         node *newNode = (node *)malloc(sizeof(node));
 
-        // Check if memory allocation fails
-        if(newNode == NULL){
-            printf("Failed to allocate memory\n");
-            return;
-        }
+        safeMalloc(newNode);
 
         newNode->item = i + 1;
         newNode->next = NULL;
 
         // If the list is empty, assign HEAD to the new node
-        if(HEAD == NULL){
+        if (HEAD == NULL) {
             HEAD = newNode;
         } else {
             // Link the current node to the new node
@@ -73,3 +72,32 @@ void freeMemory(){
     HEAD = NULL;
 }
 
+void insertItem(int item){
+    node *newNode = malloc(sizeof(node));
+
+    safeMalloc(newNode);
+
+    newNode->item = item;
+    newNode->next = NULL;
+
+    if(HEAD == NULL){
+        HEAD = newNode;
+        return;
+    }
+
+    node *current = HEAD;
+
+    while(current->next != NULL){
+        current = current->next;
+    }
+    
+    current->next = newNode;
+}
+
+void safeMalloc(node *newNode){
+    // check if malloc fails
+    if(newNode == NULL){
+        printf("Failed to allocate memory\n");
+        exit(1);
+    }
+}
