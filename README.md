@@ -17,7 +17,9 @@ Resources I use to learn:
 ### Basic Operations of Data Structures
 
 **Traversal**
+
 **Search**
+
 **Insertion**
 **Deletion**
 **Sorting**
