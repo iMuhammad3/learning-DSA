@@ -16,17 +16,15 @@ Resources I use to learn:
 
 ### Basic Operations of Data Structures
 
-**Traversal**
-
-**Search**
-
-**Insertion**
-**Deletion**
-**Sorting**
-**Merge**
-**Create**
-**Selection**
-**Update**
+- **Traversal**
+- **Search**
+- **Insertion**
+- **Deletion**
+- **Sorting**
+- **Merge**
+- **Create**
+- **Selection**
+- **Update**
 
 ### Arrays
 **Arrays** are defined as the collection of similar types of data items stored at contiguous memory locations. It is one of the simplest data structures where each data element can be randomly accessed by using its index number.
