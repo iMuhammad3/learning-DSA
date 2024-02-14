@@ -16,14 +16,15 @@ void fillList(int);
 void printList();
 void insertItem(int);
 void deleteItem(int);
+void searchItem(int);
 void freeMemory();
 
 int main()
 {
     fillList(10);
-    insertItem(10);
     insertItem(20);
     deleteItem(10);
+    searchItem(2);
     printList();
     freeMemory();
 }
@@ -133,6 +134,35 @@ void deleteItem(int item)
         printf("Item wasn't found");
     }
 
+}
+
+void searchItem(int item)
+{
+    if(HEAD == NULL)
+    {
+        printf("Empty List\n");
+        return;
+    }
+
+    node *temp = HEAD;
+    int i = 1;
+    bool isFound = false;
+
+    while(temp->next != NULL)
+    {
+        if(temp->item == item)
+        {
+            isFound = true;
+            printf("Item (%d) found at index %d\n", item, i);
+        }
+        temp = temp->next;
+        i++;
+    }
+
+    if(!isFound)
+    {
+        printf("Item not found!\n");
+    }
 }
 
 void freeMemory()
