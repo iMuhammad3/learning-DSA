@@ -1,7 +1,7 @@
 # Learning DSA
 
 Resources I use to learn:
-- [javatpoint](https://www.javatpoint.com/data-structure-tutorial)
+- [Javatpoint](https://www.javatpoint.com/data-structure-tutorial)
 
 ## Data Structures
 **Data Structure** is a particular way of storing and organizing data in the memory of the computer so that these data can easily be retrieved and efficiently utilized in the future when required. 
