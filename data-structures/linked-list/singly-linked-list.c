@@ -1,8 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
 
 // Define the structure for each node in the linked list
-typedef struct node {
+typedef struct node
+{
     int item;
     struct node *next;
 } node;
@@ -16,24 +18,29 @@ void printList();
 void freeMemory();
 void insertItem(int);
 void insertAtBegin(int);
+void deleteAt(int);
 void safeMalloc(node *);
 
-int main() {
+int main()
+{
 
-    insertItem(40);
+    insertAtBegin(40);
     fillList(10);
-    insertAtBegin(0);
-    printList();
+    insertItem(40);
+    // insertAtBegin(0);
+    // deleteAt(1);
     freeMemory();
-    
+
     return 0;
 }
 
-void fillList(int count) {
+void fillList(int count)
+{
 
     node *current = HEAD;
-    
-    for (int i = 0; i < count; i++) {
+
+    for (int i = 0; i < count; i++)
+    {
         node *newNode = (node *)malloc(sizeof(node));
 
         safeMalloc(newNode);
@@ -42,11 +49,15 @@ void fillList(int count) {
         newNode->next = NULL;
 
         // If the list is empty, assign HEAD to the new node
-        if (HEAD == NULL) {
+        if (HEAD == NULL)
+        {
             HEAD = newNode;
-        } else {
+        }
+        else
+        {
             // Go to the last node and append the new node to the list
-            while (current->next != NULL) {
+            while (current->next != NULL)
+            {
                 current = current->next;
             }
             current->next = newNode;
@@ -55,21 +66,24 @@ void fillList(int count) {
         // Update current pointer to the newly added node
         current = newNode;
     }
-
 }
 
-void printList(){
+void printList()
+{
     node *temp = HEAD;
     printf("Printing Linked List: \n");
-    while(temp != NULL){
+    while (temp != NULL)
+    {
         printf("%d\n", temp->item);
         temp = temp->next;
     }
 }
 
-void freeMemory(){
+void freeMemory()
+{
     node *current = HEAD;
-    while(current != NULL){
+    while (current != NULL)
+    {
         node *temp = current;
         current = current->next;
         free(temp);
@@ -77,7 +91,8 @@ void freeMemory(){
     HEAD = NULL;
 }
 
-void insertItem(int item){
+void insertItem(int item)
+{
     node *newNode = malloc(sizeof(node));
 
     safeMalloc(newNode);
@@ -85,21 +100,24 @@ void insertItem(int item){
     newNode->item = item;
     newNode->next = NULL;
 
-    if(HEAD == NULL){
+    if (HEAD == NULL)
+    {
         HEAD = newNode;
         return;
     }
 
     node *temp = HEAD;
 
-    while(temp->next != NULL){
+    while (temp->next != NULL)
+    {
         temp = temp->next;
     }
-    
+
     temp->next = newNode;
 }
 
-void insertAtBegin(int item){
+void insertAtBegin(int item)
+{
     node *newNode = malloc(sizeof(node));
 
     safeMalloc(newNode);
@@ -107,7 +125,8 @@ void insertAtBegin(int item){
     newNode->item = item;
     newNode->next = NULL;
 
-    if(HEAD == NULL){
+    if (HEAD == NULL)
+    {
         HEAD = newNode;
         return;
     }
@@ -116,9 +135,53 @@ void insertAtBegin(int item){
     HEAD = newNode;
 }
 
-void safeMalloc(node *newNode){
+void deleteAt(int index)
+{
+    if (HEAD == NULL)
+    {
+        printf("List is empty");
+        return;
+    }
+
+    node *temp = HEAD;
+    node *before = NULL;
+
+    if (index == 0)
+    {
+        HEAD = HEAD->next;
+        free(temp);
+        return;
+    }
+
+    for (int i = 0; i < index - 1; i++)
+    {
+        if (temp == NULL || temp->next == NULL)
+        {
+            printf("No items at %d\n", index);
+            return;
+        }
+        temp = temp->next;
+    }
+
+    // Check if the node to be deleted exists
+    if (temp->next == NULL)
+    {
+        printf("No items at %d\n", index);
+        return;
+    }
+
+    node *after = temp->next->next;
+
+    free(temp->next);
+
+    temp->next = after;
+}
+
+void safeMalloc(node *newNode)
+{
     // check if malloc fails
-    if(newNode == NULL){
+    if (newNode == NULL)
+    {
         printf("Failed to allocate memory\n");
         exit(1);
     }
