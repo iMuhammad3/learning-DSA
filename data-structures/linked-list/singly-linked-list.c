@@ -19,6 +19,7 @@ void freeMemory();
 void insertItem(int);
 void insertAtBegin(int);
 void deleteAt(int);
+void search(int);
 void safeMalloc(node *);
 
 int main()
@@ -27,8 +28,7 @@ int main()
     insertAtBegin(40);
     fillList(10);
     insertItem(40);
-    // insertAtBegin(0);
-    // deleteAt(1);
+    search(40);
     freeMemory();
 
     return 0;
@@ -175,6 +175,34 @@ void deleteAt(int index)
     free(temp->next);
 
     temp->next = after;
+}
+
+void search(int item)
+{
+    if(HEAD == NULL)
+    {
+        printf("Empty list\n");
+        return;
+    }
+    node *temp = HEAD;
+    int i = 0;
+    bool isFound = false;
+
+    while(temp->next != NULL)
+    {
+        if(temp->item == item)
+        {
+            printf("Item (%d) found at %d\n", item, i);
+            isFound = true;
+        }
+        i++;
+        temp = temp->next;
+    }
+
+    if(!isFound)
+    {
+        printf("Item not found!\n");
+    }
 }
 
 void safeMalloc(node *newNode)
