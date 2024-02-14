@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
 
 // Define the structure for each node in the doubly linked list
 typedef struct node
@@ -14,12 +15,15 @@ node *HEAD = NULL;
 void fillList(int);
 void printList();
 void insertItem(int);
+void deleteItem(int);
 void freeMemory();
 
 int main()
 {
     fillList(10);
+    insertItem(10);
     insertItem(20);
+    deleteItem(10);
     printList();
     freeMemory();
 }
@@ -97,6 +101,38 @@ void insertItem(int item)
     }
     temp->next = newNode;
     newNode->prev = temp;
+}
+
+void deleteItem(int item)
+{
+    if(HEAD == NULL)
+    {
+        printf("Empty List\n");
+        return;
+    }
+
+    node *temp = HEAD;
+    bool isFound = false;
+    int i = 1;
+
+    while (temp->next != NULL)
+    {
+        if(temp->item == item)
+        {
+            isFound = true;
+            temp->prev->next = temp->next;
+            free(temp);
+            printf("Deleted item (%d) at index %d\n", item, i);
+        }
+        temp = temp->next;
+        i++;
+    }
+
+    if(!isFound)
+    {
+        printf("Item wasn't found");
+    }
+
 }
 
 void freeMemory()
