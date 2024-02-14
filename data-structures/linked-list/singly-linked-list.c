@@ -15,11 +15,13 @@ void fillList(int);
 void printList();
 void freeMemory();
 void insertItem(int);
+void insertAtBegin(int);
 void safeMalloc(node *);
 
 int main(){
 
     insertItem(20);
+    insertAtBegin(0);
     fillList(10);
     printList();
     freeMemory();
@@ -92,6 +94,23 @@ void insertItem(int item){
     }
     
     current->next = newNode;
+}
+
+void insertAtBegin(int item){
+    node *newNode = malloc(sizeof(node));
+
+    safeMalloc(newNode);
+
+    newNode->item = item;
+    newNode->next = NULL;
+
+    if(HEAD == NULL){
+        HEAD = newNode;
+        return;
+    }
+
+    newNode->next = HEAD;
+    HEAD = newNode;
 }
 
 void safeMalloc(node *newNode){
