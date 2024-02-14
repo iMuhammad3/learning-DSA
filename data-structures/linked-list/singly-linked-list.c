@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 // Define the structure for each node in the linked list
-typedef struct node{
+typedef struct node {
     int item;
     struct node *next;
 } node;
@@ -18,22 +18,22 @@ void insertItem(int);
 void insertAtBegin(int);
 void safeMalloc(node *);
 
-int main(){
+int main() {
 
-    insertItem(20);
-    insertAtBegin(0);
+    insertItem(40);
     fillList(10);
+    insertAtBegin(0);
     printList();
     freeMemory();
     
     return 0;
 }
 
-void fillList(int count){
+void fillList(int count) {
 
     node *current = HEAD;
     
-    for (int i = 0; i < count; i++){
+    for (int i = 0; i < count; i++) {
         node *newNode = (node *)malloc(sizeof(node));
 
         safeMalloc(newNode);
@@ -45,7 +45,10 @@ void fillList(int count){
         if (HEAD == NULL) {
             HEAD = newNode;
         } else {
-            // Link the current node to the new node
+            // Go to the last node and append the new node to the list
+            while (current->next != NULL) {
+                current = current->next;
+            }
             current->next = newNode;
         }
 
@@ -87,13 +90,13 @@ void insertItem(int item){
         return;
     }
 
-    node *current = HEAD;
+    node *temp = HEAD;
 
-    while(current->next != NULL){
-        current = current->next;
+    while(temp->next != NULL){
+        temp = temp->next;
     }
     
-    current->next = newNode;
+    temp->next = newNode;
 }
 
 void insertAtBegin(int item){
