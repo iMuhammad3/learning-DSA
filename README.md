@@ -57,3 +57,18 @@ typedef struct node
 [Check my implementation of doubly linked lists](/tree/main/data-structures/linked-list/singly-linked-list)
 - **Circular singly linked list** - In a circular singly linked list, the last node of the list contains a pointer to the first node of the list. We can have circular singly linked list as well as circular doubly linked list.
 - **Circular doubly linked list** - Circular doubly linked list is a more complex type of data structure in which a node contains pointers to its previous node as well as the next node. Circular doubly linked list doesn't contain NULL in any of the nodes. The last node of the list contains the address of the first node of the list. The first node of the list also contains the address of the last node in its previous pointer.
+
+### Stacks
+A **Stack** is a linear data structure that follows the LIFO (Last-In-First-Out) principle. a **Stack** can also be defined as a container in which insertion and deletion can be done from the one end known as the top of the stack.
+Stacks can be implemented using arrays or linked lists, here I learnt how to implement stacks using arrays.
+[Check my implementation of stacks using arrays](/tree/main/data-structures/stacks/stack.c)
+```c
+// define maximum size value for array
+#define MAX_SIZE 100
+
+// define structure for stack
+typedef struct {
+    int array[MAX_SIZE];
+    int top;
+} Stack;
+```
