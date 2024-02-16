@@ -72,3 +72,22 @@ typedef struct {
     int top;
 } Stack;
 ```
+
+### Queues
+**Queue** is the data structure that is similar to the queue in the real world. A **queue** is a data structure in which whatever comes first will go out first, and it follows the FIFO (First-In-First-Out) policy. **queue** can also be defined as the list or collection in which the insertion is done from one end known as the rear end or the tail of the **queue**, whereas the deletion is done from another end known as the front end or the head of the **queue**.
+
+```c
+// define an array queue structure
+typedef struct {
+    int array[MAX_SIZE];
+    int rear;
+    int front;
+} Queue;
+```
+
+#### Types of Queues
+- **Simple or Linear Queue**: In Linear Queue, an insertion takes place from one end while the deletion occurs from another end. The end at which the insertion takes place is known as the rear end, and the end at which the deletion takes place is known as front end. It strictly follows the FIFO rule.
+The major drawback of using a linear Queue is that insertion is done only from the rear end. If the first three elements are deleted from the Queue, we cannot insert more elements even though the space is available in a Linear Queue. In this case, the linear Queue shows the overflow condition as the rear is pointing to the last element of the Queue.
+[Check my implementation of linear queue using arrays](/data-structures/queues/linear-queue.c).
+- **Circular Queue**: In Circular Queue, all the nodes are represented as circular. It is similar to the linear Queue except that the last element of the queue is connected to the first element. It is also known as Ring Buffer, as all the ends are connected to another end.
+- **Priority Queue**: It is a special type of queue in which the elements are arranged based on the priority. It is a special type of queue data structure in which every element has a priority associated with it.
