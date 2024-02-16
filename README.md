@@ -90,4 +90,5 @@ typedef struct {
 The major drawback of using a linear Queue is that insertion is done only from the rear end. If the first three elements are deleted from the Queue, we cannot insert more elements even though the space is available in a Linear Queue. In this case, the linear Queue shows the overflow condition as the rear is pointing to the last element of the Queue.
 [Check my implementation of linear queue using arrays](/data-structures/queues/linear-queue.c).
 - **Circular Queue**: In Circular Queue, all the nodes are represented as circular. It is similar to the linear Queue except that the last element of the queue is connected to the first element. It is also known as Ring Buffer, as all the ends are connected to another end.
+[Check my implementation of linear queue using arrays](/data-structures/queues/circular-queue.c).
 - **Priority Queue**: It is a special type of queue in which the elements are arranged based on the priority. It is a special type of queue data structure in which every element has a priority associated with it.
