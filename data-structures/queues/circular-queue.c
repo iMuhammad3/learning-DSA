@@ -20,7 +20,15 @@ void display(Queue *);
 
 int main(void)
 {
-
+    Queue queue;
+    init(&queue);
+    for (int i = 0;i < 10;i++)
+    {
+        enqueue(&queue, i);
+    }
+    dequeue(&queue);dequeue(&queue);dequeue(&queue);
+    enqueue(&queue, 10);enqueue(&queue, 20);enqueue(&queue, 30);enqueue(&queue, 40);
+    display(&queue);
 }
 
 void init(Queue *queue)
@@ -81,9 +89,10 @@ void display(Queue *queue)
         printf("Empty Queue\n");
         return;
     }
-    printf("Items in Queue: ");
-    for (int i = queue->front+1;i <= queue->rear;i++)
-    {
+    printf("Items in Queue: \n");
+    int i = queue->front;
+    do {
         printf("%d\n", queue->array[i]);
-    }
+        i = (i + 1) % MAX_SIZE;
+    } while (i != (queue->rear + 1) % MAX_SIZE);
 }
