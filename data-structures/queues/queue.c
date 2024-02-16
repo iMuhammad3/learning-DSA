@@ -23,7 +23,8 @@ int main(void)
 
 void init(Queue *queue)
 {
-
+    queue->front = -1;
+    queue->rear = -1;
 }
 
 void enqueue(Queue *queue, int value)
