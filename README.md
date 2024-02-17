@@ -92,3 +92,26 @@ The major drawback of using a linear Queue is that insertion is done only from t
 - **Circular Queue**: In Circular Queue, all the nodes are represented as circular. It is similar to the linear Queue except that the last element of the queue is connected to the first element. It is also known as Ring Buffer, as all the ends are connected to another end.
 [Check my implementation of linear queue using arrays](/data-structures/queues/circular-queue.c).
 - **Priority Queue**: It is a special type of queue in which the elements are arranged based on the priority. It is a special type of queue data structure in which every element has a priority associated with it.
+
+### Hash Table
+A **Hash table** is a data structure that stores some information, and the information has basically two main components, i.e., key and value. The **hash table** can be implemented with the help of an associative array. The efficiency of mapping depends upon the efficiency of the hash function used for mapping.
+
+```c
+#define SIZE 26
+
+// Structure for each node in the linked list
+typedef struct Node
+{
+    char *key;
+    int value;
+    struct Node *next;
+} Node;
+
+typedef struct
+{
+    Node *table[SIZE]; // Array of pointers to linked lists
+} HashTable;
+```
+A **Hash table** could also be seen as an Array of Linked Lists.
+
+[View implementation of Hash table](/data-structures/hash-tables/hash-table.c)
