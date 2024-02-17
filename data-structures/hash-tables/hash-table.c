@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-#define SIZE 10
+#define SIZE 26
 
 // Structure for each node in the linked list
 typedef struct Node
@@ -27,6 +27,28 @@ void freeTable(HashTable *);
 
 int main(void)
 {
+    HashTable *hashTable = createHashTable();
+    FILE *f = fopen("alpha.txt", "r");
+    if (f == NULL) {
+        perror("Error opening file");
+        return 1;
+    }
+
+    char buffer[1000];
+    int i = 1;
+
+    while (fgets(buffer, sizeof(buffer), f) != NULL) {
+        // Remove newline character, if present
+        size_t length = strlen(buffer);
+        if (buffer[length - 1] == '\n') {
+            buffer[length - 1] = '\0';
+        }
+        insert(hashTable, buffer, i++);
+    }
+    displayTable(hashTable);
+    freeTable(hashTable);
+    fclose(f);
+
 }
 
 Node *createNode(const char *key, int value)
@@ -45,7 +67,7 @@ Node *createNode(const char *key, int value)
 
 HashTable *createHashTable()
 {
-    HashTable *hashTable = malloc(sizeof(HashTable));
+    HashTable *hashTable = (HashTable *)malloc(sizeof(HashTable));
     if (hashTable == NULL)
     {
         printf("Memory allocation failed\n");
@@ -65,7 +87,7 @@ unsigned int hash(const char *key)
     {
         hashValue = (hashValue << 5) + *key++;
     }
-    return hashValue;
+    return hashValue % SIZE;
 }
 
 void insert(HashTable *hashTable, const char *key, int value)
@@ -102,7 +124,7 @@ void displayTable(HashTable *hashTable)
         Node *temp = hashTable->table[i];
         while (temp != NULL)
         {
-            printf("{ %s: %d }, ");
+            printf("{ %s: %d }, ", temp->key, temp->value);
             temp = temp->next;
         }
         printf("\n");
