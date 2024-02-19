@@ -115,3 +115,14 @@ typedef struct
 A **Hash table** could also be seen as an Array of Linked Lists.
 
 [View implementation of Hash table](/data-structures/hash-tables/hash-table.c)
+
+### Trees
+A **Tree** is a data structure that represents data hierarchically. It is a collection of nodes in a parent-child relationship. A **tree** can be defined as a collection of nodes in which each node is a data structure consisting of a value, address of the parent node, and address of the child nodes.
+
+####Types of Trees
+- **General Trees**: A general tree is a tree in which each node can have any number of children.
+- **Binary Trees**: A binary tree is a tree in which each node can have at most two children.
+- **Binary Search Trees**: A binary search tree is a binary tree in which the value of each node is greater than or equal to the value of its left child and less than or equal to the value of its right child.
+- **AVL Tree**: An AVL tree is a self-balancing binary search tree where the heights of the two child subtrees of any node differ by at most one.
+- **Treap**: A treap is a type of binary search tree that combines the properties of a binary heap and a binary search tree, where each node has a priority value and satisfies the heap property based on priorities and the binary search tree property based on keys.
+- **B- Tree**: A B-tree is a self-balancing tree data structure that maintains sorted data and allows for efficient search, insertion, and deletion operations by keeping the tree balanced and minimizing the number of accesses to disk or memory.
