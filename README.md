@@ -28,7 +28,7 @@ Resources I use to learn:
 
 ### Arrays
 **Arrays** are defined as the collection of similar types of data items stored at contiguous memory locations. It is one of the simplest data structures where each data element can be randomly accessed by using its index number.
-[array representation](/data-structures/images/ds-array.png)
+![array representation](/data-structures/images/ds-array.png)
 
 ### Linked Lists
 **Linked list** is a linear data structure that includes a series of connected nodes. Linked list can be defined as the nodes that are randomly stored in the memory. A node in the linked list contains two parts, i.e., first is the data part and second is the address part. The last node of the list contains a pointer to the null.
