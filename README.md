@@ -2,6 +2,7 @@
 
 Resources I use to learn:
 - [Javatpoint](https://www.javatpoint.com/data-structure-tutorial)
+- [Geeks for Geeks](https://www.geeksforgeeks.org/learn-data-structures-and-algorithms-dsa-tutorial/)
 
 ## Data Structures
 **Data Structure** is a particular way of storing and organizing data in the memory of the computer so that these data can easily be retrieved and efficiently utilized in the future when required. 
@@ -28,10 +29,11 @@ Resources I use to learn:
 
 ### Arrays
 **Arrays** are defined as the collection of similar types of data items stored at contiguous memory locations. It is one of the simplest data structures where each data element can be randomly accessed by using its index number.
-![array representation](/data-structures/images/ds-array.png)
+![array representation](/data-structures/images/array.png)
 
 ### Linked Lists
 **Linked list** is a linear data structure that includes a series of connected nodes. Linked list can be defined as the nodes that are randomly stored in the memory. A node in the linked list contains two parts, i.e., first is the data part and second is the address part. The last node of the list contains a pointer to the null.
+![linked list representation](/data-structures/images/linked-list.png)
 
 ```c
 // How to create type Node in C
@@ -62,6 +64,7 @@ typedef struct node
 ### Stacks
 A **Stack** is a linear data structure that follows the LIFO (Last-In-First-Out) principle. a **Stack** can also be defined as a container in which insertion and deletion can be done from the one end known as the top of the stack.
 Stacks can be implemented using arrays or linked lists, here I learnt how to implement stacks using arrays.
+![stack representation](/data-structures/images/stack.png)
 [Check my implementation of stacks using arrays](/data-structures/stacks/stack.c)
 ```c
 // define maximum size value for array
@@ -76,6 +79,7 @@ typedef struct {
 
 ### Queues
 **Queue** is the data structure that is similar to the queue in the real world. A **queue** is a data structure in which whatever comes first will go out first, and it follows the FIFO (First-In-First-Out) policy. **queue** can also be defined as the list or collection in which the insertion is done from one end known as the rear end or the tail of the **queue**, whereas the deletion is done from another end known as the front end or the head of the **queue**.
+![queue representation](/data-structures/images/queue.png)
 
 ```c
 // define an array queue structure
@@ -96,6 +100,7 @@ The major drawback of using a linear Queue is that insertion is done only from t
 
 ### Hash Table
 A **Hash table** is a data structure that stores some information, and the information has basically two main components, i.e., key and value. The **hash table** can be implemented with the help of an associative array. The efficiency of mapping depends upon the efficiency of the hash function used for mapping.
+![linked list representation](/data-structures/images/hash-table.png)
 
 ```c
 #define SIZE 26
