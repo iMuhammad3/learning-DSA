@@ -154,7 +154,7 @@ A **Tree** is a data structure that represents data hierarchically. It is a coll
 ### Binary Trees
 
 The Binary tree means that the node can have maximum two children. Here, binary name itself suggests that 'two'; therefore, each node can have either 0, 1 or 2 children.
-![linked list representation](/data-structures/images/binary-tree.png)
+![binary tree representation](/data-structures/images/binary-tree.png)
 
 ```c
 // Define structure for binary tree node
@@ -171,4 +171,11 @@ struct Node {
 -   **Complete Binary Tree**: The complete binary tree is a tree in which all the nodes are completely filled except the last level. In the last level, all the nodes must be as left as possible.
 -   **Perfect Binary Tree**: A tree is a perfect binary tree if all the internal nodes have 2 children, and all the leaf nodes are at the same level.
 -   **Balanced Binary Tree**: A balanced binary tree is a binary tree in which the heights of the two subtrees of every node differ by at most one.
-    [Check my implementation of binary tree](/data-structures/trees/binary-tree.c).
+
+### Binary Search Trees
+
+A **Binary Search tree** is a **Binary tree** where the value of left node must be smaller than the parent node, and the value of right node must be greater than the parent node.
+
+![binary search representation](/data-structures/images/binary-search-tree.png)
+
+[Check my implementation of binary search tree](/data-structures/trees/binary-tree.c).
