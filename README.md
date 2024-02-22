@@ -187,17 +187,60 @@ A graph is a data structure that consists of a set of nodes (vertices) and a set
 #### Types of Graph
 
 -   **Directed Graph (Digraph)**: In a directed graph, each edge has a direction, meaning it goes from one node to another.
+
     ![Directed graph representation](/data-structures/images/directed-graph.png)
 
 -   **Undirected Graph**: In an undirected graph, edges have no direction, meaning they connect nodes in both directions.
+
     ![undirected graph representation](/data-structures/images/undirected-graph.png)
 
 #### Graph representation
 
 -   **Adjacency Matrix**: A 2D array where the presence or absence of an edge between two nodes is represented by a 1 or 0, respectively.
+
     ![adjacency matrix representation](/data-structures/images/graph-adjacency-matrix.png)
 
 -   **Adjacency List**: A collection of lists or arrays where each node has a list of its adjacent nodes.
+
     ![adjacency list representation](/data-structures/images/graph-adjacency-list.png)
+
+#### Adjancency list structure could be defined like this
+
+```c
+// structure to represent a node of adjacency list
+typedef struct Node
+{
+    int data;
+    struct Node *next;
+} Node;
+
+// structure to represent the graph
+typedef struct
+{
+    int numVertices;
+    Node **adjacencyList;
+} Graph;
+```
+
+#### Or like this
+
+```c
+// structure to represent a node of adjacency list
+struct Node {
+    int data;
+    struct Node* next;
+};
+
+// structure to represent an adjacency list
+struct AdjList {
+    struct AdjNode* head;
+};
+
+// structure to represent the graph
+struct Graph {
+    int numVertices;
+    struct AdjList* array;
+};
+```
 
 [View implementation of undirected graph](/data-structures/graphs/undirected-graph.c)
