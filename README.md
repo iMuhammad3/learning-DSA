@@ -199,3 +199,5 @@ A graph is a data structure that consists of a set of nodes (vertices) and a set
 
 -   **Adjacency List**: A collection of lists or arrays where each node has a list of its adjacent nodes.
     ![adjacency list representation](/data-structures/images/graph-adjacency-list.png)
+
+[View implementation of undirected graph](/data-structures/graphs/undirected-graph.c)
