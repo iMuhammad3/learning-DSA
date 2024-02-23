@@ -244,3 +244,19 @@ struct Graph {
 ```
 
 [View implementation of undirected graph](/data-structures/graphs/undirected-graph.c)
+
+
+## Algorithms
+
+An **algorithm** is a process or a set of rules required to perform calculations or some other problem-solving operations on data.
+
+### Types of Algorithms
+
+- Searching Algorithms
+- Sorting Algorithms
+
+### Searching Algorithms
+
+- **Linear Search**: It is the simplest searching algorithm, we simply traverse the list completely and match each element of the list with the item whose location is to be found. If the match is found, then the location of the item is returned; otherwise, the algorithm returns NULL or -1.
+
+[Check my implementation of Linear search in java](/algorithms/searching/linear-search.java).
