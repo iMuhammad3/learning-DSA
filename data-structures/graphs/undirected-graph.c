@@ -20,7 +20,17 @@ void printGraph(Graph *);
 
 int main()
 {
+    Graph* graph = createGraph(5);
 
+    addEdge(graph, 0, 1);
+    addEdge(graph, 0, 4);
+    addEdge(graph, 1, 2);
+    addEdge(graph, 1, 3);
+    addEdge(graph, 1, 4);
+    addEdge(graph, 2, 3);
+    addEdge(graph, 3, 4);
+
+    printGraph(graph);
 }
 
 Node *createNode(int data)
@@ -40,4 +50,27 @@ Graph *createGraph(int numVertices)
         graph->adjacencyList[i] = NULL;
     }
     return graph;
+}
+
+void addEdge(Graph *graph, int src, int dest)
+{
+    Node* newNode = createNode(dest);
+    newNode->next = graph->adjacencyList[src];
+    graph->adjacencyList[src] = newNode;
+
+    newNode = createNode(src);
+    newNode->next = graph->adjacencyList[dest];
+    graph->adjacencyList[dest] = newNode;
+}
+
+void printGraph(Graph* graph) {
+    for (int i = 0; i < graph->numVertices; ++i) {
+        Node* temp = graph->adjacencyList[i];
+        printf("Adjacency list of vertex %d: ", i);
+        while (temp) {
+            printf("%d -> ", temp->data);
+            temp = temp->next;
+        }
+        printf("NULL\n");
+    }
 }
