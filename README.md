@@ -259,8 +259,12 @@ An **algorithm** is a process or a set of rules required to perform calculations
 
 - **Linear Search**: It is the simplest searching algorithm, we simply traverse the list completely and match each element of the list with the item whose location is to be found. If the match is found, then the location of the item is returned; otherwise, the algorithm returns NULL or -1.
 
+![linear search representation](/algorithms/images/linear-search.png)
+
 [Check my implementation of Linear search in java](/algorithms/searching/LinearSearch.java).
 
 - **Binary Search**: Binary search is the search technique that works efficiently on sorted lists. It follows the divide and conquer approach in which the list is divided into two halves, and the item is compared with the middle element of the list. If the match is found then, the location of the middle element is returned. Otherwise, we search into either of the halves depending upon the result produced through the match.
+
+![binary search representation](/algorithms/images/binary-search.png)
 
 [Check implementation of Binary search in java](/algorithms/searching/BinarySearch.java).
