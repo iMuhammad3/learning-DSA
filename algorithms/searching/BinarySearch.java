@@ -3,7 +3,7 @@ package algorithms.searching;
 public class BinarySearch {
 
     public static void main(String[] args) {
-        int array[] = { 1, 2, 40, 5, 6, 700 };
+        int array[] = { 1, 2, 4, 5, 6, 700 };
         int value = 5;
         int res = binarySearch(array, value);
         if (res == -1) {
