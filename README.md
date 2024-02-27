@@ -268,3 +268,25 @@ An **algorithm** is a process or a set of rules required to perform calculations
 ![binary search representation](/algorithms/images/binary-search.png)
 
 [Check implementation of Binary search in java](/algorithms/searching/BinarySearch.java).
+
+### Sorting Algorithms
+
+- **Bubble Sort**: Bubble sort works on the repeatedly swapping of adjacent elements until they are not in the intended order. Although it is simple to use, it is primarily used as an educational tool because the performance of bubble sort is poor in the real world. It is not suitable for large data sets. The average and worst-case complexity of Bubble sort is O(n²)
+
+**Implementation**
+
+```java
+    private static void sort(int[] array) {
+        int i, j;
+        for (i = 0; i < array.length; i++)
+            for (j = i + 1; j < array.length; j++)
+                if (array[i] > array[j])
+                    swap(array, i, j);
+    }
+
+    private static void swap(int array[], int i, int j) {
+        int temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+    }
+```
