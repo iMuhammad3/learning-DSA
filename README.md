@@ -245,25 +245,24 @@ struct Graph {
 
 [View implementation of undirected graph](/data-structures/graphs/undirected-graph.c)
 
-
 ## Algorithms
 
 An **algorithm** is a process or a set of rules required to perform calculations or some other problem-solving operations on data.
 
 ### Types of Algorithms
 
-- Searching Algorithms
-- Sorting Algorithms
+-   Searching Algorithms
+-   Sorting Algorithms
 
 ### Searching Algorithms
 
-- **Linear Search**: It is the simplest searching algorithm, we simply traverse the list completely and match each element of the list with the item whose location is to be found. If the match is found, then the location of the item is returned; otherwise, the algorithm returns NULL or -1.
+-   **Linear Search**: It is the simplest searching algorithm, we simply traverse the list completely and match each element of the list with the item whose location is to be found. If the match is found, then the location of the item is returned; otherwise, the algorithm returns NULL or -1.
 
 ![linear search representation](/algorithms/images/linear-search.png)
 
 [Check my implementation of Linear search in java](/algorithms/searching/LinearSearch.java).
 
-- **Binary Search**: Binary search is the search technique that works efficiently on sorted lists. It follows the divide and conquer approach in which the list is divided into two halves, and the item is compared with the middle element of the list. If the match is found then, the location of the middle element is returned. Otherwise, we search into either of the halves depending upon the result produced through the match.
+-   **Binary Search**: Binary search is the search technique that works efficiently on sorted lists. It follows the divide and conquer approach in which the list is divided into two halves, and the item is compared with the middle element of the list. If the match is found then, the location of the middle element is returned. Otherwise, we search into either of the halves depending upon the result produced through the match.
 
 ![binary search representation](/algorithms/images/binary-search.png)
 
@@ -271,9 +270,9 @@ An **algorithm** is a process or a set of rules required to perform calculations
 
 ### Sorting Algorithms
 
-- **Bubble Sort**: Bubble sort works on the repeatedly swapping of adjacent elements until they are not in the intended order. Although it is simple to use, it is primarily used as an educational tool because the performance of bubble sort is poor in the real world. It is not suitable for large data sets. The average and worst-case complexity of Bubble sort is O(n²)
+-   **Bubble Sort**: Bubble sort works on the repeatedly swapping of adjacent elements until they are not in the intended order. Although it is simple to use, it is primarily used as an educational tool because the performance of bubble sort is poor in the real world. It is not suitable for large data sets. The average and worst-case complexity of Bubble sort is O(n²)
 
-**Implementation**
+**Implementation of Bubble sort**
 
 ```java
     private static void sort(int[] array) {
@@ -288,5 +287,28 @@ An **algorithm** is a process or a set of rules required to perform calculations
         int temp = array[i];
         array[i] = array[j];
         array[j] = temp;
+    }
+```
+
+-   **Selection sort**: **Selection sort** is a simple sorting algorithm that works by repeatedly finding the minimum (or maximum, depending on sorting order) element from the unsorted part of the array and moving it to the beginning.
+
+**Implementation of Selection sort**
+
+```java
+    private static void sort(int[] array) {
+            int n = array.length;
+
+            for (int i = 0; i < n - 1; i++) {
+                int minIndex = i;
+
+                for (int j = i + 1; j < n; j++) {
+                    if (array[j] < array[minIndex]) {
+                        minIndex = j;
+                    }
+                }
+                int temp = array[i];
+                array[i] = array[j];
+                array[j] = temp;
+            }
     }
 ```
