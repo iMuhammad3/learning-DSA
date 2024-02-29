@@ -312,3 +312,23 @@ An **algorithm** is a process or a set of rules required to perform calculations
             }
     }
 ```
+
+- **Insertion sort**: **Insertion sort** is a simple sorting algorithm that builds the final sorted array one element at a time. It iterates over the input array and, in each iteration, it removes one element from the input data, finds the location it belongs to in the sorted array, and inserts it there.
+
+**Implementation of Insertion sort**
+
+```java
+    private static void sort(int[] arr) {
+        int n = arr.length;
+        for (int i = 1; i < n; ++i) {
+            int key = arr[i];
+            int j = i - 1;
+
+            while (j >= 0 && arr[j] > key) {
+                arr[j + 1] = arr[j];
+                j = j - 1;
+            }
+            arr[j + 1] = key;
+        }
+    }
+```
