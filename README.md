@@ -252,8 +252,9 @@ A heap is a complete binary tree, and the binary tree is a tree in which the nod
 ![Heap data structure](/data-structures/images/heap.png)
 
 #### Types of Heap
-- **Min Heap**: The value of the parent node is less than or equal to either of its children.
-- **Max Heap**: The value of the parent node is greater than or equal to either of its children.
+
+-   **Min Heap**: The value of the parent node is less than or equal to either of its children.
+-   **Max Heap**: The value of the parent node is greater than or equal to either of its children.
 
 [View implementation of Max Heap](/data-structures/heap/max-heap.c)
 
@@ -325,7 +326,7 @@ An **algorithm** is a process or a set of rules required to perform calculations
     }
 ```
 
-- **Insertion sort**: **Insertion sort** is a simple sorting algorithm that builds the final sorted array one element at a time. It iterates over the input array and, in each iteration, it removes one element from the input data, finds the location it belongs to in the sorted array, and inserts it there.
+-   **Insertion sort**: **Insertion sort** is a simple sorting algorithm that builds the final sorted array one element at a time. It iterates over the input array and, in each iteration, it removes one element from the input data, finds the location it belongs to in the sorted array, and inserts it there.
 
 **Implementation of Insertion sort**
 
@@ -344,3 +345,7 @@ An **algorithm** is a process or a set of rules required to perform calculations
         }
     }
 ```
+
+-   **Heap Sort**: **Heap sort** is a comparison-based sorting algorithm that uses the heap data structure to sort elements in an array. It works by first building a heap from the input array and then repeatedly extracting the maximum (for a max heap) or minimum (for a min heap) element from the heap and placing it at the end of the array. The process is repeated until the heap is empty, resulting in a sorted array.
+
+[View implementation of Heap Sort](/algorithms/sorting/HeapSort.java)
