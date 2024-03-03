@@ -349,3 +349,30 @@ An **algorithm** is a process or a set of rules required to perform calculations
 -   **Heap Sort**: **Heap sort** is a comparison-based sorting algorithm that uses the heap data structure to sort elements in an array. It works by first building a heap from the input array and then repeatedly extracting the maximum (for a max heap) or minimum (for a min heap) element from the heap and placing it at the end of the array. The process is repeated until the heap is empty, resulting in a sorted array.
 
 [View implementation of Heap Sort](/algorithms/sorting/HeapSort.java)
+
+-   **Quick Sort**: **Quick sort** is a highly efficient, comparison-based sorting algorithm that falls under the category of divide-and-conquer algorithms. It works by dividing the input array into smaller sub-arrays, sorting each sub-array recursively, and then combining them to produce the sorted output.
+
+**Implementation of Quick Sort**
+
+```java
+    private static void sort(int arr[], int start, int end) {
+        if (start < end) {
+            int p = partition(arr, start, end);
+            sort(arr, start, p - 1);
+            sort(arr, p + 1, end);
+        }
+    }
+
+    private static int partition(int arr[], int start, int end) {
+        int pivot = arr[end];
+        int i = (start - 1);
+        for (int j = start;j < end;j++) {
+            if(arr[j] < pivot) {
+                i++;
+                swap(arr, i, j);
+            }
+        }
+        swap(arr, i + 1, end);
+        return (i + 1);
+    }
+```
