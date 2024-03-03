@@ -245,6 +245,18 @@ struct Graph {
 
 [View implementation of undirected graph](/data-structures/graphs/undirected-graph.c)
 
+### Heap
+
+A heap is a complete binary tree, and the binary tree is a tree in which the node can have utmost two children.
+
+![Heap data structure](/data-structures/images/heap.png)
+
+#### Types of Heap
+- **Min Heap**: The value of the parent node is less than or equal to either of its children.
+- **Max Heap**: The value of the parent node is greater than or equal to either of its children.
+
+[View implementation of Max Heap](/data-structures/heap/max-heap.c)
+
 ## Algorithms
 
 An **algorithm** is a process or a set of rules required to perform calculations or some other problem-solving operations on data.
