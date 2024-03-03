@@ -249,7 +249,7 @@ struct Graph {
 
 A heap is a complete binary tree, and the binary tree is a tree in which the node can have utmost two children.
 
-![Heap data structure](/data-structures/images/heap.png)
+![Heap data structure](/data-structures/images/heap-ds.png)
 
 #### Types of Heap
 
