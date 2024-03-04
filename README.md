@@ -380,8 +380,8 @@ An **algorithm** is a process or a set of rules required to perform calculations
 ### Common Algorithms for Trees
 
 - **Depth First Search (DFS)** In the context of binary trees, DFS (Depth-First Search) is a tree traversal algorithm that systematically explores the nodes of the tree in a depth-first manner.
-    1. Pre-Order Traversal *[View Implementation](/algorithms/trees/pre-order.c)*
-    2. Post-Order Traversal *[View Implementation](/algorithms/trees/post-order.c)*
-    3. In-Order Traversal *[View Implementation](/algorithms/trees/in-order.c)*
+    1. Pre-Order Traversal <small>[View Implementation](/algorithms/trees/pre-order.c)</small>
+    2. Post-Order Traversal <small>[View Implementation](/algorithms/trees/post-order.c)</small>
+    3. In-Order Traversal <small>[View Implementation](/algorithms/trees/in-order.c)</small>
 
 - **Breadth First Search (BFS)** BFS is a traversal algorithm that systematically explores the nodes of a tree level by level, starting from the root node and moving towards the leaves. Unlike DFS (Depth-First Search), which explores nodes depth-wise, BFS explores nodes breadth-wise, visiting all nodes at the same level before moving to the next level.
