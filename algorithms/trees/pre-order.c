@@ -20,7 +20,11 @@ int main(void)
     root->right->left = createNode(30);
     root->right->right = createNode(25);
 
+    printf("Pre-Order Traversal\n");
+
     traverse(root);
+
+    printf("\n");
 
 }
 
